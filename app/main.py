@@ -1,0 +1,47 @@
+from fastapi import FastAPI, HTTPException, status
+
+from app.models import StudentCreate, StudentOut
+from app.storage import load_students, save_students
+
+app = FastAPI(
+    title="Hiraiable",
+    description="Students currently in the bootcamp",
+    version="1.0",
+)
+
+
+@app.get("/")
+def home():
+    return {"app": "Hiraiable", "message": "Welcome to the bootcamp student tracker"}
+
+
+@app.get("/students", response_model=list[StudentOut])
+def list_students():
+    return load_students()
+
+
+@app.get("/students/{student_id}", response_model=StudentOut)
+def get_student(student_id: int):
+    for student in load_students():
+        if student["id"] == student_id:
+            return student
+    raise HTTPException(status_code=404, detail=f"Student {student_id} not found")
+
+
+@app.post("/students", status_code=status.HTTP_201_CREATED, response_model=StudentOut)
+def create_student(student: StudentCreate):
+    students = load_students()
+    new_id = max((s["id"] for s in students), default=0) + 1
+    new_student = {"id": new_id, **student.model_dump()}
+    students.append(new_student)
+    save_students(students)
+    return new_student
+
+
+@app.delete("/students/{student_id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_student(student_id: int):
+    students = load_students()
+    remaining = [s for s in students if s["id"] != student_id]
+    if len(remaining) == len(students):
+        raise HTTPException(status_code=404, detail=f"Student {student_id} not found")
+    save_students(remaining)
