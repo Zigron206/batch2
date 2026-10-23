@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ---------- Navbar ---------- */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #222f3d;
+}
+
+#logo {
+    color: orange;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+#links {
+    display: flex;
+    gap: 25px;
+}
+
+#links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ---------- Hero ---------- */
+#hero {
+    padding: 70px 20px;
+    background-image: linear-gradient(to right, #2b5876, #4e4376);
+    color: white;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 2.5rem;
+}
+
+#hero p {
+    margin: 10px 0 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0c14b;
+}
+
+/* ---------- Cards ---------- */
+#students {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    background-color: #e2e7e6;
+}
+
+.card {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #2b5876;
+    border-radius: 10px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    padding: 20px;
+    background-color: #161e28;
+    color: white;
+    text-align: center;
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 700px) {
+    #navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #hero h1 {
+        font-size: 1.75rem;
+    }
+
+    #students {
+        flex-direction: column;
+    }
+
+    footer {
+        background-color: #0f3c16;
+    }
+}
