@@ -256,3 +256,126 @@
 // console.log(Number.isInteger(5));
 // console.log(Number.isInteger(5.5));
 
+// -------------------------------
+
+// for i in range(5):
+
+// for (let i=5; i>0; i--){
+//     console.log("i is: ",i);
+// }
+
+// let count = 1;
+// while (count <= 3){
+//     console.log("count: ", count);
+//     count++;
+// }
+
+
+// const fruits = ["apple", "banana", "mango"];
+// for (const fruit of fruits){
+//     console.log(fruit);
+// }
+
+
+// for (const letter of "Bootcamp"){
+//     console.log(letter)
+// }
+
+// const student = { name: "Ali", age: 20, city: "Lahore" };
+// for (const x in student) {
+//     console.log(student[x]);
+// }
+
+// for (let i=1; i<=10;i++){
+//     if (i===3) continue;
+//     if (i===7) break;
+//     console.log("loop: ",i)
+// }
+
+
+// const fruits = ["apple", "banana", "mango"];
+// fruits[1] = "kiwi";
+// fruits.push("orange");
+// fruits.unshift("cherry")
+// fruits.pop("orange");
+// fruits.shift("cherry")
+// console.log(fruits);
+
+// console.log(fruits.includes("kiwi"))
+// console.log(fruits.indexOf("kiwi"))
+
+// const a = [1, 2];
+// const b = [3, 4];
+// console.log(a.concat(b));
+
+// const matrix = [[1, 2], [3, 4]];
+// console.log(matrix[1][0]);
+
+// function double(x) { return x*2 }
+// console.log(double(2))
+
+// const nums = [1,2,3,4,5];
+// // const doubled = nums.map((n) => n*2);
+// // console.log(doubled)
+
+// nums.forEach((n) => console.log("Number",n));
+
+// const nums = [1,2,3,4,5];
+// const evens = nums.filter((n) => n%2===0);
+// console.log(evens)
+
+// const nums = [1,2,2,4,5];
+// // console.log(nums.some((n) => n > 4));
+// // console.log(nums.every((n) => n > 0));
+// // console.log(nums.every((n) => n > 3));
+
+// console.log(nums.findIndex((n) => n>3));
+
+// const student = {
+//     name: "Ali",
+//     age: 20,
+//     city: "Lahore",
+//     skills: ["Python", "HTML"],
+//     address: { street: "Main Road", zip: 54000 },
+// };
+// student.email='saad@bootcamp.com'
+// console.log(student.email)
+
+// const a = {x:1};
+// const b = a;
+// b.x = 99;
+// console.log(a)
+
+// const colors = ['red', 'green', 'blue']
+// const [first, second] = colors;
+// console.log(first, second, colors)
+
+// let x = 1;
+// let y = 2;
+// [x,y] = [y,x]
+// console.log(x)
+
+
+// const [head, ...tail] = [1, 2, 3, 4];
+// console.log(tail)
+
+// function add(a,b){
+//     return a+b;
+// }
+
+// console.log(add(2,2))
+
+// const subtract = (a,b) => {
+//     return a-b;
+// }
+
+// const square = (n) => n*n
+// console.log(square(3))
+
+// function runTwice(action){
+//     action();
+//     action();
+// }
+
+// runTwice(() => console.log('hi'))
+
