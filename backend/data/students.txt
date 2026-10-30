@@ -1,0 +1,5 @@
+{"id": 1, "name": "Ali", "age": 20, "city": "Islamabad"}
+{"id": 2, "name": "Sara", "age": 22, "city": "Lahore"}
+{"id": 3, "name": "Ahmed", "age": 21, "city": "Karachi"}
+{"id": 4, "name": "Zara", "age": 23, "city": "Peshawar"}
+{"id": 5, "name": "Omar", "age": 20, "city": "Quetta"}

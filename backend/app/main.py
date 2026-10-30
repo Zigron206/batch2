@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.models import StudentCreate, StudentOut
 from app.storage import load_students, save_students
@@ -9,6 +10,17 @@ app = FastAPI(
     version="1.0",
 )
 
+origin = [
+    "http://127.0.0.1:5500",
+    "http://localhost:5500",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origin,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 @app.get("/")
 def home():

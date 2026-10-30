@@ -5,124 +5,139 @@
     font-family: Arial, sans-serif;
 }
 
-/* ---------- Navbar ---------- */
-#navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #222f3d;
+body {
+    background-color: #f4f6f8;
+    line-height: 1.6;
 }
 
-#logo {
-    color: orange;
-    font-size: 1.5rem;
-    font-weight: 900;
-    text-decoration: none;
-}
-
-.loader {
-    width: 28px;
-    height: 28px;
-    border: 4px solid #55606b;
-    border-top: 4px solid orange;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-/* ---------- Hero ---------- */
-#hero {
-    padding: 70px 20px;
-    background-image: linear-gradient(to right, #788085, #4e2ec3);
-    color: white;
+/* ---------- Header ---------- */
+header {
+    padding: 40px 20px;
     text-align: center;
+    color: white;
+    background-image: linear-gradient(to right, #2b5876, #4e4376);
 }
 
-#hero h1 {
+header h1 {
     font-size: 2.5rem;
-    animation: fadein 1.5s ease-out;
 }
 
-#hero p {
-    margin: 10px 0 20px;
-    animation: fadein 2.5s ease-out;
-}
-
-button {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    background-color: #f0c14b;
-    animation: pulse 1.5s ease-in-out infinite;
-}
-
-button:hover {
-    animation-play-state: paused;
-}
-
-/* ---------- Cards ---------- */
-#students {
+/* ---------- Layout ---------- */
+main {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
     gap: 20px;
-    padding: 40px 30px;
-    background-color: #e2e7e6;
+    padding: 30px;
 }
 
 .card {
-    flex-grow: 1;
     padding: 20px;
     background-color: white;
-    border: 2px solid #2b5876;
     border-radius: 10px;
-
-    opacity: 0;
-    animation: rise 0.8s ease-out forwards;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.card:nth-child(1) { animation-delay: 0.2s; }
-.card:nth-child(2) { animation-delay: 0.5s; }
-.card:nth-child(3) { animation-delay: 0.8s; }
+.card h2 {
+    margin-bottom: 15px;
+    color: #2b5876;
+}
+
+/* ---------- Form ---------- */
+#student-form {
+    width: 280px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+label {
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2b5876;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+    background-color: #2b5876;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4e4376;
+}
+
+#message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* ---------- Table ---------- */
+table {
+    width: 460px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e2e7e6;
+}
+
+th {
+    background-color: #e2e7e6;
+}
+
+tbody tr:hover {
+    background-color: #f4f6f8;
+}
+
+.delete-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    background-color: #c0392b;
+}
+
+.delete-btn:hover {
+    background-color: #e74c3c;
+}
 
 /* ---------- Footer ---------- */
 footer {
     padding: 20px;
-    background-color: #161e28;
-    color: white;
     text-align: center;
-}
-
-/* ---------- Keyframes ---------- */
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-@keyframes pulse {
-    0%   { transform: scale(1); }
-    50%  { transform: scale(1.08); }
-    100% { transform: scale(1); }
-}
-
-@keyframes rise {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    color: white;
+    background-color: #161e28;
 }
 
 /* ---------- Phones ---------- */
 @media (max-width: 700px) {
-    #students {
-        flex-direction: column;
+    #student-form,
+    table {
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
     }
 }
